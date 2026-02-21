@@ -19,6 +19,7 @@
     "@heroui/system": "^2.4.27",
     "@heroui/theme": "^2.4.26",
     "@prisma/adapter-pg": "^7.4.0",
+    "@prisma/adapter-ppg": "^7.4.1",
     "@prisma/client": "^7.4.0",
     "@prisma/extension-accelerate": "^3.0.1",
     "bcryptjs": "^3.0.3",
