@@ -29,13 +29,11 @@ export async function createIngredient(formData: FormData) {
         return { success: true, ingredient }
     } catch (error) {
         if (error instanceof ZodError) {
-            return {
-                error: error
-            };
+            return { error: error.issues.map((e) => e.message).join(", ") };
         }
 
-        console.error("Ошибка создания ингредиента ")
-        return { error: "Ошибка создания ингредиента" }
+        console.error("Ошибка создания ингредиента:", error);
+        return { error: "Ошибка при создании ингредиента" };
     }
 }
 

@@ -6,7 +6,7 @@ import { create } from "zustand";
 interface IngredientState {
     ingredients: IIngredient[];
     isLoading: boolean;
-    error: string | ZodError<unknown> | null;
+    error: string | null;
     loadIngredients: () => Promise<void>;
     addIngredient: (formData: FormData) => Promise<void>;
     removeIngredient: (id: string) => Promise<void>
