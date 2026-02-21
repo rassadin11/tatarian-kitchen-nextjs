@@ -1,11 +1,12 @@
 import { createIngredient, deleteIngredient, getIngredients } from "@/actions/ingredient";
 import { IIngredient } from "@/types/ingredient";
+import { ZodError } from "zod";
 import { create } from "zustand";
 
 interface IngredientState {
     ingredients: IIngredient[];
     isLoading: boolean;
-    error: string | null;
+    error: string | ZodError<unknown> | null;
     loadIngredients: () => Promise<void>;
     addIngredient: (formData: FormData) => Promise<void>;
     removeIngredient: (id: string) => Promise<void>
